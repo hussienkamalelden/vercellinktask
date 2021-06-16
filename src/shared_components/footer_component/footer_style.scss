@@ -1,0 +1,101 @@
+@import "../../assets/styles/placeholders.scss";
+
+footer {
+    .holder {
+        background-color: $seventhColor;
+        padding: 2rem 0;
+        .cols {
+            margin-bottom: 1rem;
+            .ulist-box {
+                list-style: none;
+                margin: 0;
+                .litems {
+                    margin-bottom: 0.2rem;
+                    .links {
+                        color: $thirdColor;
+                        text-decoration: none;
+                        font-size: 15px;
+                        transition: $transition-200ms;
+                        &:hover {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+            .titles {
+                color: $thirdColor;
+                font-size: 15px;
+                margin-bottom: 1rem;
+            }
+            .subscribe-box {
+                margin-top: 0.5rem;
+                @include flex(flex-start, left, row, nowrap);
+                .inputs {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    font-size: 14px;
+                }
+                .email {
+                    padding: 5px 35px 5px 10px;
+                    background-color: $eighthColor;
+                    border-radius: 5px 0 0 5px;
+                }
+                .submit {
+                    color: $whiteColor;
+                    background-color: $firstColor;
+                    border-radius: 0 5px 5px 0;
+                    padding: 0 10px;
+                    transition: $transition-200ms;
+                    &:hover {
+                        background-color: $firstColorHover;
+                    }
+                }
+            }
+            .social-box {
+                margin-top: 0.5rem;
+                @include flex(flex-start, left, row, nowrap);
+                .social-links {
+                    margin-right: 20px;
+                    .icons {
+                        color: $thirdColor;
+                        font-size: 20px;
+                        transition: $transition-200ms;
+                        &:hover {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+            &:first-of-type {
+                .ulist-box {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .copyrights {
+        text-align: center;
+        background-color: $primaryColor;
+        padding: 0.5rem 0;
+        .content {
+            color: $whiteColor;
+            font-size: 15px;
+            display: inline-block;
+            line-height: 1.2;
+        }
+    }
+}
+// Start Media Query //
+@include media-breakpoint-down(lg) {
+    footer {
+        .holder {
+            .cols {
+                .ulist-box {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+// End Media Query //

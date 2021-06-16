@@ -1,0 +1,129 @@
+// Start Setting //
+.setting-dropdown {
+    height: 40px;
+    width: 47px;
+    .setting-dropdown-toggle {
+        position: relative;
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none;
+        background-image: url(../../assets/images/settings.png);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 23px 23px;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            background-color: $firstColor !important;
+            .setting-dropdown-icon-active {
+                border-color: $firstColor;
+                background-color: $whiteColor;
+            }
+        }
+        &::after {
+            border: none;
+        }
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+    .setting-dropdown-menu {
+        width: 185px;
+        .setting-dropdown-title {
+            color: $eleventhColor;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 10px;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .setting-drop-fonts-holder {
+            @include flex(flex-start, flex-start, row, wrap);
+            padding-left: 7px;
+            .setting-drop-item {
+                width: auto;
+                line-height: 1;
+                padding: 0 6px;
+                transition: $transition-200ms;
+                &:first-of-type {
+                    font-size: 35px;
+                }
+                &:nth-of-type(2) {
+                    font-size: 30px;
+                    margin-top: 4px;
+                }
+                &:last-of-type {
+                    font-size: 20px;
+                    margin-top: 13px;
+                }
+                &:hover {
+                    color: $firstColorHover;
+                    background-color: transparent;
+                }
+            }
+        }
+        .setting-drop-item {
+            position: relative;
+            white-space: normal;
+            padding: 0 10px;
+            font-size: 15px;
+            font-weight: 500;
+            .setting-drop-item-icon {
+                color: $firstColorHover;
+                position: absolute;
+                right: 10px;
+                top: 5px;
+            }
+            .setting-item-highlight {
+                color: $firstColorHover;
+            }
+            &:active {
+                background-color: transparent;
+                color: black;
+            }
+        }
+        .setting-drop-item-all {
+            position: relative;
+            color: $firstColorHover;
+            text-align: center;
+            font-weight: 500;
+            transition: $transition-200ms;
+            .arrow-right {
+                position: absolute;
+                margin-left: 10px;
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid $firstColorHover;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    vertical-align: middle;
+                }
+                &:before {
+                    width: 15px;
+                    height: 2px;
+                    background: $firstColorHover;
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                    transition: $transition-200ms;
+                }
+            }
+            &:hover {
+                color: $primaryColor;
+                .arrow-right {
+                    &:after {
+                        border-left-color: $primaryColor;
+                    }
+                    &:before {
+                        background: $primaryColor;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Setting //

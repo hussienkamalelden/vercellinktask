@@ -1,0 +1,105 @@
+// Start Notifications //
+.notif-dropdown {
+    margin: 0 1.5rem;
+    .notif-dropdown-toggle {
+        position: relative;
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none;
+        height: 40px;
+        .notif-dropdown-icon-active {
+            position: absolute;
+            height: 13px;
+            width: 13px;
+            top: 5px;
+            right: 15px;
+            border: 2px solid $primaryColor;
+            border-radius: 50%;
+            background-color: $firstColor;
+        }
+        .notif-dropdown-icon {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+        &:hover {
+            background-color: $firstColor !important;
+            .notif-dropdown-icon-active {
+                border-color: $firstColor;
+                background-color: $whiteColor;
+            }
+        }
+        &::after {
+            border: none;
+        }
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+    .notif-dropdown-menu {
+        width: 270px;
+        .notif-dropdown-title {
+            color: $eleventhColor;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 10px;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .notif-drop-item {
+            white-space: normal;
+            padding: 0 10px;
+            font-size: 15px;
+            font-weight: 500;
+            .notif-item-highlight {
+                color: $firstColorHover;
+            }
+            &:active {
+                background-color: transparent;
+                color: black;
+            }
+        }
+        .notif-drop-item-all {
+            position: relative;
+            color: $firstColorHover;
+            text-align: center;
+            font-weight: 500;
+            transition: $transition-200ms;
+            .arrow-right {
+                position: absolute;
+                margin-left: 10px;
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid $firstColorHover;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    vertical-align: middle;
+                }
+                &:before {
+                    width: 15px;
+                    height: 2px;
+                    background: $firstColorHover;
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                    transition: $transition-200ms;
+                }
+            }
+            &:hover {
+                color: $primaryColor;
+                .arrow-right {
+                    &:after {
+                        border-left-color: $primaryColor;
+                    }
+                    &:before {
+                        background: $primaryColor;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Notifications //

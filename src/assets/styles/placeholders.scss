@@ -1,0 +1,16 @@
+﻿@import "variables";
+
+html {
+  scroll-behavior: smooth;
+}
+.sections-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+@mixin flex($align, $justify, $flow, $wrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-flow: $flow;
+  flex-wrap: $wrap;
+}

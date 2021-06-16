@@ -1,0 +1,88 @@
+@import "../../../assets/styles/placeholders.scss";
+
+.how {
+    position: relative;
+    padding: 4rem 0 6rem;
+    background-color: black;
+    .how_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../../assets/images/slider/slide_2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        z-index: 1;
+        opacity: 0.6;
+    }
+    .how-holder {
+        position: relative;
+        z-index: 2;
+        .how-main-title,
+        .how-main-subtitle {
+            color: $whiteColor;
+            text-align: center;
+            font-size: 40px;
+        }
+        .how-main-subtitle {
+            font-size: 25px;
+        }
+        .how-helpers-holder {
+            margin-top: 6rem;
+            @include flex(flex-start, center, row, wrap);
+            .how-helpers-helper {
+                border: 3px solid $whiteColor;
+                padding: 1rem;
+                width: 180px;
+                height: 180px;
+                transform: rotate(45deg);
+                margin: -20px 2.5rem 0;
+                cursor: pointer;
+                transition: $transition-200ms;
+                .how-helpers-helper-content {
+                    @include flex(center, center, column, wrap);
+                    transform: rotate(-45deg);
+                    height: 100%;
+                    position: relative;
+                    .helpers-icon {
+                        position: absolute;
+                        top: 0;
+                        width: 50px;
+                    }
+                    .helpers-icon-special {
+                        width: 35px;
+                    }
+                    .how-helpers-title {
+                        color: $whiteColor;
+                        margin: 0;
+                    }
+                    .how-helpers-sign {
+                        color: $whiteColor;
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+                &:hover {
+                    background-color: $firstColor;
+                    border-color: $firstColor;
+                }
+            }
+        }
+    }
+}
+// Start Media Query //
+@include media-breakpoint-down(lg) {
+    .how {
+        .how-holder {
+            .how-helpers-holder {
+                margin-top: -30px;
+                .how-helpers-helper {
+                    margin: 90px 2.5rem 0;
+                }
+            }
+        }
+    }
+}
+// End Media Query //

@@ -1,0 +1,20 @@
+@import "../../../assets/styles/placeholders.scss";
+
+.news-header {
+    padding-top: 1rem;
+    .news-header-holder {
+        .news-header-holder-links {
+            font-size: 14px;
+            font-weight: 500;
+            color: $primaryColor;
+            &:last-of-type {
+                color: $eleventhColor;
+            }
+        }
+        .news-header-holder-sign {
+            color: $eleventhColor;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+    }
+}

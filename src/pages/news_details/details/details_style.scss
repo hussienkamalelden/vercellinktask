@@ -1,0 +1,46 @@
+@import "../../../assets/styles/placeholders.scss";
+
+.details {
+    padding: 1rem 0;
+    .card-details-holder {
+        background-color: $whiteColor;
+        border-radius: 5px;
+        .card-details-img {
+            border-radius: 5px 5px 0 0;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .card-details-body {
+            padding: 1rem;
+            .card-details-title-box {
+                .details-title-box-label {
+                    color: $thirdColor;
+                    font-size: 15px;
+                }
+            }
+            .card-details-content {
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Start Media Query //
+@include media-breakpoint-down(sm) {
+    .details {
+        .card-details-holder {
+            .card-details-img {
+                height: 200px;
+            }
+            .card-details-body {
+                .card-details-title-box {
+                    .details-title-box-title {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Media Query //

@@ -1,0 +1,205 @@
+@import "../../../assets/styles/placeholders.scss";
+
+.filters {
+    margin-top: 2rem;
+    .filters-holder {
+        @include flex(flex-start, flex-start, row, wrap);
+        // Start Date Box //
+        .filters-boxes {
+            margin-right: 2rem;
+            .filters-box-title {
+                font-size: 14px;
+                margin-bottom: 0.3rem;
+            }
+            .filters-box-date-holder {
+                position: relative;
+                margin-bottom: 1rem;
+            }
+            .filters-box-date-overlay {
+                height: 45px;
+                width: 150px;
+                background-color: $whiteColor;
+                border-radius: 5px;
+                border: 1px solid $eleventhColor;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 10px 10px 0;
+                @include flex(flex-start, flex-start, row, nowrap);
+                .filters-box-date-overlay-text {
+                    color: $thirdColor;
+                    font-size: 15px;
+                }
+                .filters-box-date-overlay-icon {
+                    color: $firstColor;
+                    font-size: 18px;
+                    margin: 3px 0 0 auto;
+                }
+            }
+            .filters-box-date {
+                height: 45px;
+                width: 150px;
+                opacity: 0;
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                background: transparent;
+                bottom: 0;
+                color: transparent;
+                cursor: pointer;
+                height: auto;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: auto;
+            }
+        }
+        // End Date Box //
+        // Start Category Box //
+        .filters-category-box {
+            .filters-category-box-toggle {
+                padding-top: 10px;
+                height: 45px;
+                width: 150px;
+                font-size: 15px;
+                text-align: left;
+                background-color: $whiteColor;
+                border-radius: 5px;
+                border: 1px solid $eleventhColor;
+                color: $thirdColor;
+                outline: none !important;
+                box-shadow: none !important;
+                @include flex(flex-start, flex-start, row, nowrap);
+                &::after {
+                    margin: 10px 0 0 auto;
+                }
+                &:focus {
+                    background-color: $whiteColor;
+                    border: 1px solid $eleventhColor;
+                    color: $thirdColor;
+                }
+            }
+        }
+        // End Category Box //
+        // Start Search Box //
+        .filters-search-box {
+            margin-right: 10px;
+            .filters-search-box-holder {
+                margin-top: 1.3rem;
+                @include flex(flex-start, flex-start, row, nowrap);
+                width: 450px;
+                .filters-search-box-area,
+                .filters-search-box-submit {
+                    height: 45px;
+                    width: 85%;
+                    outline: none;
+                    border: none;
+                    background-color: $whiteColor;
+                }
+                .filters-search-box-area {
+                    padding: 0 10px;
+                    border: 1px solid $eleventhColor;
+                    border-radius: 5px 0 0 5px;
+                }
+                .filters-search-box-submit {
+                    width: 15%;
+                    border-radius: 0 5px 5px 0;
+                    background-color: $firstColor;
+                    transition: $transition-200ms;
+                    background-image: url("../../../assets/images/search.png");
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    background-size: 23px 23px;
+                    &:hover {
+                        background-color: $firstColorHover;
+                    }
+                }
+            }
+        }
+        // End Search Box //
+        // Start Sort Box //
+        .filters-sort-box {
+            .filters-sort-box-toggle {
+                margin-top: 1.3rem;
+                background-color: transparent;
+                height: 45px;
+                padding: 0 0.5rem;
+                border: none;
+                box-shadow: none;
+                outline: none;
+                .filters-sort-box-title {
+                    color: $firstColor;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-size: 15px;
+                    &::after {
+                        content: "\21C5";
+                        color: $firstColor;
+                        margin-left: 0.3rem;
+                    }
+                }
+                &::after {
+                    border: none;
+                }
+                &:focus {
+                    border: none;
+                    box-shadow: none;
+                }
+                &:hover {
+                    background-color: $secondColor;
+                    color: $thirdColor;
+                    border: none;
+                    box-shadow: none;
+                    .filters-sort-box-title {
+                        &::after {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+            .filters-sort-box-menu {
+                min-width: 120px;
+                .filters-sort-box-item {
+                    line-height: 1;
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+                .filters-sort-box-item-active {
+                    background-color: $firstColor;
+                    color: $whiteColor;
+                }
+            }
+        }
+        // End Sort Box //
+    }
+}
+// Start Media Query //
+@include media-breakpoint-down(lg) {
+    .filters {
+        .filters-holder {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .filters {
+        .filters-holder {
+            .filters-boxes {
+                margin-right: 0;
+                width: 100%;
+                .filters-box-date-overlay,
+                .filters-box-date,
+                .filters-category-box-toggle {
+                    width: 100%;
+                }
+            }
+            .filters-search-box {
+                .filters-search-box-holder {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// End Media Query //

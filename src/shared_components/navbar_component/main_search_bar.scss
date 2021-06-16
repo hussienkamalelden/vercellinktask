@@ -1,0 +1,50 @@
+// Start Search Box//
+.main-search-box {
+	@include flex(flex-start, flex-start, row, nowrap);
+	position: relative;
+	width: 300px;
+	direction: rtl;
+	.inputs {
+		border: none;
+		outline: none;
+		height: 40px;
+		font-size: 14px;
+	}
+	.search {
+		direction: ltr;
+		padding: 5px 10px;
+		background-color: $tenthColor;
+		border-radius: 5px 0 0 5px;
+		visibility: hidden;
+		width: 0%;
+		color: white;
+		transition: $transition-200ms;
+	}
+	::placeholder {
+		color: $whiteColor;
+		opacity: 0.5;
+	}
+	.submit,
+	.submit-overlay {
+		background-color: transparent;
+		border-radius: 0 5px 5px 0;
+		transition: $transition-200ms;
+		background-image: url("../../assets/images/search.png");
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: 23px 23px;
+		width: 15%;
+		&:hover {
+			background-color: $firstColorHover !important;
+		}
+	}
+	.submit-overlay {
+		position: absolute;
+		border-radius: 5px;
+		height: 40px;
+		cursor: pointer;
+		top: 0;
+		right: 0;
+	}
+}
+// End Search Box//

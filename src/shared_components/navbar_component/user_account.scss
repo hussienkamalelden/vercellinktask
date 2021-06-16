@@ -1,0 +1,19 @@
+.user-acc {
+    display: none;
+    padding: 0 1rem 1rem;
+    .profile-pic {
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+    }
+    .username {
+        color: $whiteColor;
+        margin-left: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 110px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
